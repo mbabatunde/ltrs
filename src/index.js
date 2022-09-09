@@ -87,7 +87,8 @@ function scoreDisplay() {
     console.log(`metabolic: ${metabolic}`);
     document.getElementById("result").innerHTML = `Your score: ${totalScore}`;
     let images = document.getElementById("ltrs-imgs");
-    if (images.style.display === "none") {
+    console.log(images.style.display)
+    if (images.style.display === "none" || !images.style.display) {
         images.style.display = "block";
     } else {
         images.style.display = "none";

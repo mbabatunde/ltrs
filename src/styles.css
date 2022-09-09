@@ -26,6 +26,8 @@ body {
     font-size: 1.25em;
     margin-top: 2%;
     box-shadow: 1px 1px 25px #999;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #calculator td,
@@ -87,10 +89,12 @@ body {
     touch-action: manipulation;
     margin: 0;
     position: absolute;
-    top: 65%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    display: inline-block;
+    vertical-align: bottom;
+    margin-top: 2%;
 }
 
 .button:active {
