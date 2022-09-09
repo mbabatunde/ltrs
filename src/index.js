@@ -80,6 +80,17 @@ for (let i = 0; i < ele.length; i++){
 }
 
 function scoreDisplay() {
+    // Checking metabolic here
+    metabolic = 0;
+
+    let ele = document.querySelectorAll("input[type=checkbox]");
+
+    for (let i = 0; i < ele.length; i++){
+        console.log(`${ele[i]}: ${ele[i].checked}`);
+        if (ele[i].checked) {
+            metabolic += 1;
+        }
+    }
     // Calculating the score
     totalScore = age + bmi + meld + metabolic;
     console.log(`score: ${totalScore}`);
@@ -101,10 +112,10 @@ function scoreDisplay() {
     }
 
     // Clears selection back to original values
-    let elements = document.getElementsByTagName('select');
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].selectedIndex = 0;
-    }
+    // let elements = document.getElementsByTagName('select');
+    // for (var i = 0; i < elements.length; i++) {
+    //     elements[i].selectedIndex = 0;
+    // }
 }
 
 
