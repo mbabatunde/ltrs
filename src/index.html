@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/styles.css" rel="stylesheet" />
+    <title>Eishan Project</title>
+  </head>
+  <body>
+    <h1 id="title">Liver Transplant Risk Score Calculator</h1>
+    <p id="subtitle">
+      A simple clinical instrument for the risk stratification of patients
+      referred for liver transplantation
+    </p>
+    <table id="calculator" class="center">
+      <tr>
+        <th colspan="2" id="center-text">Calculate Your Score</th>
+      </tr>
+      <tr>
+        <th class="left-align-text">Age</th>
+        <td>
+          <select id="age" onChange="ageRange(this)">
+            <option selected="selected" value="disabled">Select One</option>
+            <option value="65">&lt65</option>
+            <option value="66">65-69</option>
+            <option value="70">70-74</option>
+            <option value="75">&gt75</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th class="left-align-text">MELD Score</th>
+        <td>
+          <select id="meld" onChange="meldRange(this)">
+            <option selected="selected" value="disabled">Select One</option>
+            <option value="25">&lt25</option>
+            <option value="26">25-29</option>
+            <option value="30">30-34</option>
+            <option value="35">&gt35</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th class="left-align-text">BMI</th>
+        <td>
+          <select id="bmi" onChange="bmiScore(this)">
+            <option selected="selected" value="disabled">Select One</option>
+            <option value="18">&lt18.5</option>
+            <option value="19">18.5-39.9</option>
+            <option value="40">&gt40</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th class="left-align-text">Metabolic</th>
+        <td>
+          <input
+            type="checkbox"
+            id="Diabetes"
+            name="Diabetes"
+            value="Diabetes"
+            onclick="metabolicScore('Diabetes')"
+          />
+          <label for="Diabetes">Diabetes</label><br />
+          <input
+            type="checkbox"
+            id="Dialysis"
+            name="Dialysis"
+            value="Dialysis"
+            onclick="metabolicScore('Dialysis')"
+          />
+          <label for="Dialysis">Dialysis</label><br />
+        </td>
+      </tr>
+    </table>
+    <h2 id="result" class="scoreResult"></h2>
+    <button class="button" onclick="scoreDisplay()">Calculate</button>
+    <div id="ltrs-imgs">
+      <h4 id="chart-title">USA (SRTR)</h4>
+      <img src="/src/assets/USA_LTRS_KM_Curves.png" />
+      <br />
+      <h4 id="chart-title">Europe (ELTR)</h4>
+      <img src="/src/assets/Euro_LTRS_KM_Curves.png" />
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
