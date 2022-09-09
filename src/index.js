@@ -67,6 +67,7 @@ function bmiScore(sel) {
     }
 }
 
+// Responsible for checking the metabolic checkboxes and adding if they're checked
 metabolic = 0;
 
 let ele = document.querySelectorAll("input[type=checkbox]");
@@ -79,6 +80,7 @@ for (let i = 0; i < ele.length; i++){
 }
 
 function scoreDisplay() {
+    // Calculating the score
     totalScore = age + bmi + meld + metabolic;
     console.log(`score: ${totalScore}`);
     console.log(`age: ${age}`);
@@ -86,12 +88,22 @@ function scoreDisplay() {
     console.log(`meld: ${meld}`);
     console.log(`metabolic: ${metabolic}`);
     document.getElementById("result").innerHTML = `Your score: ${totalScore}`;
+
+
     let images = document.getElementById("ltrs-imgs");
     console.log(images.style.display)
+
+    // Displays the images
     if (images.style.display === "none" || !images.style.display) {
         images.style.display = "block";
     } else {
         images.style.display = "none";
+    }
+
+    // Clears selection back to original values
+    let elements = document.getElementsByTagName('select');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].selectedIndex = 0;
     }
 }
 
